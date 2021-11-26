@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.médicamentsFamilleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.décisionDuneÉtapeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +39,8 @@
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultationToolStripMenuItem});
+            this.consultationToolStripMenuItem,
+            this.décisionDuneÉtapeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(934, 26);
@@ -60,6 +62,13 @@
             this.médicamentsFamilleToolStripMenuItem.Text = "Médicaments / Famille";
             this.médicamentsFamilleToolStripMenuItem.Click += new System.EventHandler(this.médicamentsFamilleToolStripMenuItem_Click);
             // 
+            // décisionDuneÉtapeToolStripMenuItem
+            // 
+            this.décisionDuneÉtapeToolStripMenuItem.Name = "décisionDuneÉtapeToolStripMenuItem";
+            this.décisionDuneÉtapeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.décisionDuneÉtapeToolStripMenuItem.Text = "Décision d\'une étape";
+            this.décisionDuneÉtapeToolStripMenuItem.Click += new System.EventHandler(this.décisionDuneÉtapeToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
@@ -72,6 +81,7 @@
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -84,5 +94,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem consultationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem médicamentsFamilleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem décisionDuneÉtapeToolStripMenuItem;
     }
 }

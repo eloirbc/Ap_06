@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static AP_06.SQL;
 
 namespace AP_06
 {
     public partial class MedicamentsParFamille : Form
     {
-        SQL SQL = new SQL();
-
         public MedicamentsParFamille()
         {
             InitializeComponent();
@@ -22,9 +21,9 @@ namespace AP_06
 
         private void MedicamentsParFamille_Load(object sender, EventArgs e)
         {
-            SQL.Open();
+            Connexion.Open();
 
-            SqlCommand commandSQL = new SqlCommand("Select * from FAMILLE", SQL.Connexion());
+            SqlCommand commandSQL = new SqlCommand("Select * from FAMILLE", Connexion);
             SqlDataReader allData = commandSQL.ExecuteReader();
 
             while (allData.Read())
@@ -38,7 +37,7 @@ namespace AP_06
                 lvFamille.Items.Add(uneLigne);
             }
 
-            SQL.Close();
+            Connexion.Close();
         }
 
         public int indexlvFamille;
@@ -48,9 +47,9 @@ namespace AP_06
             {
                 indexlvFamille = lvFamille.SelectedItems[0].Index;
 
-                SQL.Open();
+                Connexion.Open();
 
-                SqlCommand commandSQL = new SqlCommand("SELECT * FROM medicaments INNER JOIN famille WHERE idMedicamentFamille = " + indexlvFamille, SQL.Connexion());
+                SqlCommand commandSQL = new SqlCommand("SELECT * FROM medicaments INNER JOIN famille WHERE idMedicamentFamille = " + indexlvFamille, Connexion);
                 SqlDataReader allData = commandSQL.ExecuteReader();
 
                 while (allData.Read())
@@ -68,7 +67,7 @@ namespace AP_06
                     lvMedicaments.Items.Add(uneLigne);
                 }
 
-                SQL.Close();
+                Connexion.Close();
             }
         }
 

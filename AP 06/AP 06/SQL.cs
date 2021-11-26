@@ -7,23 +7,9 @@ using System.Data.SqlClient;
 
 namespace AP_06
 {
-    class SQL
+    public static class SQL
     {
-
-        public SqlConnection Connexion()
-        {
-            SqlConnection connectionsBDD = new SqlConnection(@"Data Source=BTS2020-07\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True");
-            return connectionsBDD;
-        }
-
-        public void Open()
-        {
-            Connexion().Open();
-        }
-
-        public void Close()
-        {
-            Connexion().Close();
-        }
+        private static string ConnexionString = @"Data Source=BTS2020-07\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True";
+        public static SqlConnection Connexion = new SqlConnection(ConnexionString);
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AP_06
 {
-    public partial class Connexion : Form
+    public partial class FormConnexion : Form
     {
-        public Connexion()
+        public FormConnexion()
         {
             InitializeComponent();
         }
