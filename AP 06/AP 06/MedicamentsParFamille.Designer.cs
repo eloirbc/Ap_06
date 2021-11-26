@@ -30,13 +30,13 @@ namespace AP_06
         private void InitializeComponent()
         {
             this.lvFamille = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lvMedicaments = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,6 +64,21 @@ namespace AP_06
             this.lvFamille.UseCompatibleStateImageBehavior = false;
             this.lvFamille.View = System.Windows.Forms.View.Details;
             this.lvFamille.SelectedIndexChanged += new System.EventHandler(this.lvFamille_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Code de la famille";
+            this.columnHeader1.Width = 139;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Désignation";
+            this.columnHeader2.Width = 254;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nombre de médicaments autorisés";
+            this.columnHeader3.Width = 258;
             // 
             // label1
             // 
@@ -117,21 +132,6 @@ namespace AP_06
             this.lvMedicaments.View = System.Windows.Forms.View.Details;
             this.lvMedicaments.SelectedIndexChanged += new System.EventHandler(this.lvMedicaments_SelectedIndexChanged);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Code de la famille";
-            this.columnHeader1.Width = 139;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Désignation";
-            this.columnHeader2.Width = 209;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Nombre de médicaments autorisés";
-            this.columnHeader3.Width = 258;
-            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Dépot légal";
@@ -180,7 +180,7 @@ namespace AP_06
             this.Controls.Add(this.lvFamille);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MedicamentsParFamille";
             this.Text = "Medicaments Par Famille";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

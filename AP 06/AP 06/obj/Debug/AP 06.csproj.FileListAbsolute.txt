@@ -8,6 +8,6 @@ C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.CoreComp
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP 06.exe
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP 06.pdb
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Menu.resources
-C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Connexion.resources
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.MedicamentsParFamille.resources
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.DecisionDuneEtape.resources
+C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.FormConnexion.resources

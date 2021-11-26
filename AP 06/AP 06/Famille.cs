@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace AP_06
 {
-    internal class Famille
+    class Famille
     {
+        public string Code;
+        public string Libelle;
+        public int NbMedi;
+
+        public Famille(string Code, string Libelle, int NbMedi)
+        {
+            this.Code = Code;
+            this.Libelle = Libelle;
+            this.NbMedi = NbMedi;
+        }
     }
 }

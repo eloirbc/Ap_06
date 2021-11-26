@@ -62,6 +62,7 @@
     <Compile Include="Etape.cs" />
     <Compile Include="EtapeNormee.cs" />
     <Compile Include="Famille.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Medicament.cs" />
     <Compile Include="MedicamentsParFamille.cs">
       <SubType>Form</SubType>

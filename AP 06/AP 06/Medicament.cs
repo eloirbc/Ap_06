@@ -8,5 +8,22 @@ namespace AP_06
 {
     internal class Medicament
     {
+        public string DepotLegal;
+        public string NomCommercial;
+        public string FamCode;
+        public string Composition;
+        public string Effets;
+        public string ContreIndic;
+
+        public Medicament(string DepotLegal, string NomCommercial, string FamCode, string Composition, string Effets, string ContreIndi)
+        {
+            this.DepotLegal = DepotLegal;
+            this.NomCommercial = NomCommercial;
+            this.FamCode = FamCode;
+            this.Composition = Composition;
+            this.Effets = Effets;
+            this.ContreIndic = ContreIndi;
+        }
+
     }
 }

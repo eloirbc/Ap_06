@@ -23,16 +23,15 @@ namespace AP_06
         {
             Connexion.Open();
 
-            SqlCommand commandSQL = new SqlCommand("Select * from FAMILLE", Connexion);
-            SqlDataReader allData = commandSQL.ExecuteReader();
+            lireLesFamilles();
 
-            while (allData.Read())
+            for (int i = 0; i < Global.lesFamilles.Count; i++)
             {
                 ListViewItem uneLigne = new ListViewItem();
 
-                uneLigne.Text = allData.GetValue(0).ToString();
-                uneLigne.SubItems.Add(allData.GetValue(1).ToString());
-                uneLigne.SubItems.Add(allData.GetValue(2).ToString());
+                uneLigne.Text = Global.lesFamilles[i].Code;
+                uneLigne.SubItems.Add(Global.lesFamilles[i].Libelle);
+                uneLigne.SubItems.Add(Global.lesFamilles[i].NbMedi.ToString());
 
                 lvFamille.Items.Add(uneLigne);
             }
@@ -43,32 +42,32 @@ namespace AP_06
         public int indexlvFamille;
         private void lvFamille_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvFamille.SelectedItems.Count > 0)
-            {
-                indexlvFamille = lvFamille.SelectedItems[0].Index;
+            //if (lvFamille.SelectedItems.Count > 0)
+            //{
+            //    indexlvFamille = lvFamille.SelectedItems[0].Index;
 
-                Connexion.Open();
+            //    Connexion.Open();
 
-                SqlCommand commandSQL = new SqlCommand("SELECT * FROM medicaments INNER JOIN famille WHERE idMedicamentFamille = " + indexlvFamille, Connexion);
-                SqlDataReader allData = commandSQL.ExecuteReader();
+            //    SqlCommand commandSQL = new SqlCommand("SELECT * FROM medicaments INNER JOIN famille WHERE idMedicamentFamille = " + indexlvFamille, Connexion);
+            //    SqlDataReader allData = commandSQL.ExecuteReader();
 
-                while (allData.Read())
-                {
-                    ListViewItem uneLigne = new ListViewItem();
+            //    while (allData.Read())
+            //    {
+            //        ListViewItem uneLigne = new ListViewItem();
 
-                    uneLigne.Text = allData.GetValue(0).ToString();
-                    uneLigne.SubItems.Add(allData.GetValue(1).ToString());
-                    uneLigne.SubItems.Add(allData.GetValue(2).ToString());
-                    uneLigne.SubItems.Add(allData.GetValue(3).ToString());
-                    uneLigne.SubItems.Add(allData.GetValue(4).ToString());
-                    uneLigne.SubItems.Add(allData.GetValue(5).ToString());
-                    uneLigne.SubItems.Add(allData.GetValue(6).ToString());
+            //        uneLigne.Text = allData.GetValue(0).ToString();
+            //        uneLigne.SubItems.Add(allData.GetValue(1).ToString());
+            //        uneLigne.SubItems.Add(allData.GetValue(2).ToString());
+            //        uneLigne.SubItems.Add(allData.GetValue(3).ToString());
+            //        uneLigne.SubItems.Add(allData.GetValue(4).ToString());
+            //        uneLigne.SubItems.Add(allData.GetValue(5).ToString());
+            //        uneLigne.SubItems.Add(allData.GetValue(6).ToString());
 
-                    lvMedicaments.Items.Add(uneLigne);
-                }
+            //        lvMedicaments.Items.Add(uneLigne);
+            //    }
 
-                Connexion.Close();
-            }
+            //    Connexion.Close();
+            //}
         }
 
         private void lvMedicaments_SelectedIndexChanged(object sender, EventArgs e)

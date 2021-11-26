@@ -19,19 +19,28 @@ namespace AP_06
 
         private void médicamentsFamilleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MedicamentsParFamille FormMedFam = new MedicamentsParFamille();
-            FormMedFam.Show();
+            MedicamentsParFamille Form = new MedicamentsParFamille();
+            Form.TopLevel = false;
+            Controls.Add(Form);
+            Form.Show();
         }
 
         private void décisionDuneÉtapeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DecisionDuneEtape FormDeciEtape = new DecisionDuneEtape();
-            FormDeciEtape.Show();
+            DecisionDuneEtape Form = new DecisionDuneEtape();
+            Form.TopLevel = false;
+            Controls.Add(Form);
+            Form.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
