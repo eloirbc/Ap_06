@@ -1,0 +1,8 @@
+A ->  Florian
+B ->  Ruby
+C ->  Eloi
+D ->  Ruby
+E ->  Florian
+F ->  Eloi
+6 ->  Eloi
+7 ->  Ruby

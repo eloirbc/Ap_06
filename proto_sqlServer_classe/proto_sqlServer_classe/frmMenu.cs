@@ -20,7 +20,7 @@ namespace proto_sqlServer_classe
         {
             //Connexion à la base de données
             globale.cnx = new System.Data.SqlClient.SqlConnection();
-            globale.cnx.ConnectionString = "Data Source=SURFACE-SG\\SQLEXPRESS;Initial Catalog=PROTO;Integrated Security=True;MultipleActiveResultSets=True";
+            globale.cnx.ConnectionString = "Data Source=BTS2020-23\\SQLEXPRESS;Initial Catalog=proto_classe;Integrated Security=True;MultipleActiveResultSets=True";
             globale.cnx.Open();
 
             globale.lesClients = new List <client>();

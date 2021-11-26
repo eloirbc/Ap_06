@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b7Ckk4QOWnkUMFlWtECCtMA0BSlVVn0KeWYKZIfcoM3whJZ77hOKWAqm/cyoH361EaNAisstF10hjbhDxvL1ig==",
+  "dgSpecHash": "ckWhooycbXfrtwFbDLJbLXLnVEUmaY4ICyab5hF4ZZskOXFj/AcLkOKfzJB2k40qbCCN+g5XSH9DLMq4m9PLQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rabece\\Desktop\\AP6\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
+  "projectFilePath": "C:\\Users\\rabece\\Desktop\\Ap_06\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rabece\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\rabece\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

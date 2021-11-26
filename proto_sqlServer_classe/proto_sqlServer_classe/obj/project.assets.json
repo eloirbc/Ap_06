@@ -460,11 +460,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rabece\\Desktop\\AP6\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
+      "projectUniqueName": "C:\\Users\\rabece\\Desktop\\Ap_06\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
       "projectName": "proto_sqlServer_classe",
-      "projectPath": "C:\\Users\\rabece\\Desktop\\AP6\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
+      "projectPath": "C:\\Users\\rabece\\Desktop\\Ap_06\\proto_sqlServer_classe\\proto_sqlServer_classe\\proto_sqlServer_classe.csproj",
       "packagesPath": "C:\\Users\\rabece\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rabece\\Desktop\\AP6\\proto_sqlServer_classe\\proto_sqlServer_classe\\obj\\",
+      "outputPath": "C:\\Users\\rabece\\Desktop\\Ap_06\\proto_sqlServer_classe\\proto_sqlServer_classe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
