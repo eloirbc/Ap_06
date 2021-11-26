@@ -35,7 +35,6 @@ namespace AP_06
             this.lvWorkflowMedicament = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -73,9 +72,8 @@ namespace AP_06
             // 
             this.lvWorkflowMedicament.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lvWorkflowMedicament.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader2,
-            this.columnHeader1});
+            this.columnHeader1,
+            this.columnHeader2});
             this.lvWorkflowMedicament.HideSelection = false;
             this.lvWorkflowMedicament.Location = new System.Drawing.Point(197, 169);
             this.lvWorkflowMedicament.Name = "lvWorkflowMedicament";
@@ -83,6 +81,7 @@ namespace AP_06
             this.lvWorkflowMedicament.TabIndex = 2;
             this.lvWorkflowMedicament.UseCompatibleStateImageBehavior = false;
             this.lvWorkflowMedicament.View = System.Windows.Forms.View.Details;
+            this.lvWorkflowMedicament.SelectedIndexChanged += new System.EventHandler(this.lvWorkflowMedicament_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -93,10 +92,6 @@ namespace AP_06
             // 
             this.columnHeader2.Text = "Nom commercial";
             this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Code";
             // 
             // label3
             // 
@@ -151,6 +146,7 @@ namespace AP_06
             this.Controls.Add(this.label1);
             this.Name = "frm_Workflow";
             this.Text = "Workflow des étapes d\'un médicament";
+            this.Load += new System.EventHandler(this.frm_Workflow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,7 +157,6 @@ namespace AP_06
 
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.ListView lvWorkflowMedicament;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label2;
