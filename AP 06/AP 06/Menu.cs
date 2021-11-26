@@ -16,5 +16,17 @@ namespace AP_06
         {
             InitializeComponent();
         }
+
+        private void etapeNormeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void workflowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Workflow frm_Workflow = new frm_Workflow();
+            frm_Workflow.Show();
+            this.Close();
+        }
     }
 }

@@ -10,3 +10,15 @@ C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP 06.exe
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP 06.pdb
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Connection.resources
 C:\Users\castellf\Desktop\AP 6\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Menu.resources
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\bin\Debug\AP 06.exe.config
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\bin\Debug\AP 06.exe
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\bin\Debug\AP 06.pdb
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.AssemblyReference.cache
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Connection.resources
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP_06.frm_Workflow.resources
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Menu.resources
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP_06.Properties.Resources.resources
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.GenerateResource.cache
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.CoreCompileInputs.cache
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.exe
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.pdb

@@ -56,6 +56,12 @@
     <Compile Include="Etape.cs" />
     <Compile Include="EtapeNormee.cs" />
     <Compile Include="Famille.cs" />
+    <Compile Include="frm_Workflow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Workflow.Designer.cs">
+      <DependentUpon>frm_Workflow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medicament.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -68,6 +74,9 @@
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Workflow.resx">
+      <DependentUpon>frm_Workflow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
