@@ -16,5 +16,11 @@ namespace AP_06
         {
             InitializeComponent();
         }
+
+        private void médicamentsFamilleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedicamentsParFamille FormMedFam = new MedicamentsParFamille();
+            FormMedFam.Show();            
+        }
     }
 }

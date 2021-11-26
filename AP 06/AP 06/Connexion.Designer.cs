@@ -1,6 +1,6 @@
 ﻿namespace AP_06
 {
-    partial class Connection
+    partial class Connexion
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connexion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.btConnexion.Name = "btConnexion";
             this.btConnexion.Size = new System.Drawing.Size(253, 54);
             this.btConnexion.TabIndex = 5;
-            this.btConnexion.Text = "Connection";
+            this.btConnexion.Text = "Connexion";
             this.btConnexion.UseVisualStyleBackColor = true;
             this.btConnexion.Click += new System.EventHandler(this.btConnexion_Click);
             // 
@@ -103,7 +103,7 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Connection
+            // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,7 +118,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.Name = "Connection";
+            this.Name = "Connexion";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
