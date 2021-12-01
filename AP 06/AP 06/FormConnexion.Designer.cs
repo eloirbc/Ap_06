@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbIdentifiant = new System.Windows.Forms.TextBox();
+            this.tbMotDePasse = new System.Windows.Forms.TextBox();
             this.btConnexion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,20 +68,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Mot de passe :";
             // 
-            // textBox1
+            // tbIdentifiant
             // 
-            this.textBox1.Location = new System.Drawing.Point(312, 496);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 44);
-            this.textBox1.TabIndex = 3;
+            this.tbIdentifiant.Location = new System.Drawing.Point(312, 496);
+            this.tbIdentifiant.Name = "tbIdentifiant";
+            this.tbIdentifiant.Size = new System.Drawing.Size(191, 44);
+            this.tbIdentifiant.TabIndex = 3;
             // 
-            // textBox2
+            // tbMotDePasse
             // 
-            this.textBox2.Location = new System.Drawing.Point(340, 585);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(191, 44);
-            this.textBox2.TabIndex = 4;
+            this.tbMotDePasse.Location = new System.Drawing.Point(340, 585);
+            this.tbMotDePasse.Name = "tbMotDePasse";
+            this.tbMotDePasse.PasswordChar = '*';
+            this.tbMotDePasse.Size = new System.Drawing.Size(191, 44);
+            this.tbMotDePasse.TabIndex = 4;
             // 
             // btConnexion
             // 
@@ -111,8 +111,8 @@
             this.ClientSize = new System.Drawing.Size(618, 832);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btConnexion);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbMotDePasse);
+            this.Controls.Add(this.tbIdentifiant);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,8 +132,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbIdentifiant;
+        private System.Windows.Forms.TextBox tbMotDePasse;
         private System.Windows.Forms.Button btConnexion;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

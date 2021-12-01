@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using static AP_06.SQL;
 
 namespace AP_06
 {
@@ -23,10 +25,28 @@ namespace AP_06
         }
         private void btConnexion_Click(object sender, EventArgs e)
         {
-            Hide();
-            Menu oneMenu = new Menu();
+            Connexion.Open();
 
-            oneMenu.ShowDialog();
+            SqlCommand commandSQL = new SqlCommand("prc_connexion", Connexion);
+
+            SqlDataReader allData = commandSQL.ExecuteReader();
+
+            bool trouver = false;
+
+            while (allData.Read() && !trouver)
+            {
+                if(allData.GetValue(1).ToString() == tbIdentifiant.Text && allData.GetValue(2).ToString() == tbMotDePasse.Text)
+                {
+                    Connexion.Close();
+                    Hide();
+                    Menu oneMenu = new Menu();
+
+                    oneMenu.ShowDialog();
+                }
+            }
+
+            if (!trouver) MessageBox.Show("AUCUN COMPTE TROUVER","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Connexion.Close();
         }
     }
 }
