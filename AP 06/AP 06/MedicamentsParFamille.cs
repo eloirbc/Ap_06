@@ -27,11 +27,19 @@ namespace AP_06
 
             for (int i = 0; i < Global.lesFamilles.Count; i++)
             {
-                ListViewItem uneLigne = new ListViewItem();
-
-                uneLigne.Text = Global.lesFamilles[i].Code;
+                ListViewItem uneLigne = new ListViewItem { Text = Global.lesFamilles[i].Code };
                 uneLigne.SubItems.Add(Global.lesFamilles[i].Libelle);
-                uneLigne.SubItems.Add(Global.lesFamilles[i].NbMedi.ToString());
+
+                SqlCommand commandSQL = new SqlCommand("prc_MedicamentParFamille", Connexion) { CommandType = CommandType.StoredProcedure };
+                SqlParameter param = new SqlParameter("@CodeFamille", SqlDbType.VarChar, 255) { Value = Global.lesFamilles[i].Code };
+                commandSQL.Parameters.Add(param);
+
+                int nbMedicaments = 0;
+
+                SqlDataReader allData = commandSQL.ExecuteReader();
+                while (allData.Read()) nbMedicaments++;
+
+                uneLigne.SubItems.Add(nbMedicaments.ToString());
 
                 lvFamille.Items.Add(uneLigne);
             }
@@ -39,35 +47,40 @@ namespace AP_06
             Connexion.Close();
         }
 
-        public int indexlvFamille;
+        public string CodeFamille;
         private void lvFamille_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (lvFamille.SelectedItems.Count > 0)
-            //{
-            //    indexlvFamille = lvFamille.SelectedItems[0].Index;
+            if (lvFamille.SelectedItems.Count > 0)
+            {
+                lvMedicaments.Items.Clear();
 
-            //    Connexion.Open();
+                CodeFamille = lvFamille.SelectedItems[0].Text;
 
-            //    SqlCommand commandSQL = new SqlCommand("SELECT * FROM medicaments INNER JOIN famille WHERE idMedicamentFamille = " + indexlvFamille, Connexion);
-            //    SqlDataReader allData = commandSQL.ExecuteReader();
+                Connexion.Open();
 
-            //    while (allData.Read())
-            //    {
-            //        ListViewItem uneLigne = new ListViewItem();
+                SqlCommand commandSQL = new SqlCommand("prc_MedicamentParFamille", Connexion) { CommandType = CommandType.StoredProcedure };
+                SqlParameter param = new SqlParameter("@CodeFamille", SqlDbType.VarChar,255) { Value = CodeFamille };
+                commandSQL.Parameters.Add(param);
 
-            //        uneLigne.Text = allData.GetValue(0).ToString();
-            //        uneLigne.SubItems.Add(allData.GetValue(1).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(2).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(3).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(4).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(5).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(6).ToString());
+                SqlDataReader allData = commandSQL.ExecuteReader();
 
-            //        lvMedicaments.Items.Add(uneLigne);
-            //    }
+                while (allData.Read())
+                {
+                    ListViewItem uneLigne = new ListViewItem();
 
-            //    Connexion.Close();
-            //}
+                    uneLigne.Text = allData.GetValue(0).ToString();
+                    uneLigne.SubItems.Add(allData.GetValue(1).ToString());
+                    uneLigne.SubItems.Add(allData.GetValue(2).ToString());
+                    uneLigne.SubItems.Add(allData.GetValue(3).ToString());
+                    uneLigne.SubItems.Add(allData.GetValue(4).ToString());
+                    uneLigne.SubItems.Add(allData.GetValue(5).ToString());
+                    uneLigne.SubItems.Add(allData.GetValue(6).ToString());
+
+                    lvMedicaments.Items.Add(uneLigne);
+                }
+
+                Connexion.Close();
+            }
         }
 
         private void lvMedicaments_SelectedIndexChanged(object sender, EventArgs e)

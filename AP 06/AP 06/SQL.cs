@@ -9,7 +9,7 @@ namespace AP_06
 {
     public static class SQL
     {
-        private static string ConnexionString = @"Data Source=BTS2020-07\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
+        private static string ConnexionString = @"Data Source=BTS2020-07\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True;MultipleActiveResultSets=True;";
         public static SqlConnection Connexion = new SqlConnection(ConnexionString);
 
         public static void lireLesFamilles()
