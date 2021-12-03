@@ -54,7 +54,7 @@ namespace AP_06
             this.label1.Font = new System.Drawing.Font("Arial Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(106, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(740, 68);
+            this.label1.Size = new System.Drawing.Size(727, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "ÉTAPES PAR MÉDICAMENT";
             // 
@@ -64,7 +64,7 @@ namespace AP_06
             this.label2.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(346, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 40);
+            this.label2.Size = new System.Drawing.Size(227, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Médicament :";
             // 
@@ -74,8 +74,10 @@ namespace AP_06
             this.lvWorkflowMedicament.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.lvWorkflowMedicament.FullRowSelect = true;
             this.lvWorkflowMedicament.HideSelection = false;
             this.lvWorkflowMedicament.Location = new System.Drawing.Point(197, 169);
+            this.lvWorkflowMedicament.MultiSelect = false;
             this.lvWorkflowMedicament.Name = "lvWorkflowMedicament";
             this.lvWorkflowMedicament.Size = new System.Drawing.Size(499, 235);
             this.lvWorkflowMedicament.TabIndex = 2;
@@ -99,7 +101,7 @@ namespace AP_06
             this.label3.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(283, 421);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(353, 40);
+            this.label3.Size = new System.Drawing.Size(343, 38);
             this.label3.TabIndex = 3;
             this.label3.Text = "Étapes du workflow :";
             // 

@@ -23,13 +23,17 @@ namespace AP_06
 
         private void lvWorkflowMedicament_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lvWorkflowMedicament.SelectedItems.Count == 0) return;
             string connetionString = @"Data Source=BTS2020-15\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
             SQL = new SqlConnection(connetionString);
             SQL.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("fetchEtapes("+lvWorkflowMedicament.Items[lvWorkflowMedicament.SelectedIndices[0]].SubItems[0].Text+")",SQL);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
+            string codeMedic = lvWorkflowMedicament.SelectedItems[0].Text;
+            MessageBox.Show(codeMedic);
+
+            SqlCommand sqlCommand = new SqlCommand("fetchEtapes",SQL) { CommandType = CommandType.StoredProcedure };
+            SqlParameter param = new SqlParameter("@code", SqlDbType.VarChar) { Value =  codeMedic };
+            sqlCommand.Parameters.Add(param);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             while (reader.Read())
             {
