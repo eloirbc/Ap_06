@@ -37,6 +37,8 @@ namespace AP_06
             {
                 if(allData.GetValue(1).ToString() == tbIdentifiant.Text && allData.GetValue(2).ToString() == tbMotDePasse.Text)
                 {
+                    trouver = true;
+
                     Connexion.Close();
                     Hide();
                     Menu oneMenu = new Menu();

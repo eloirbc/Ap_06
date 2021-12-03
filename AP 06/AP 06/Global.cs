@@ -8,7 +8,7 @@ namespace AP_06
 {
     static class Global
     {
-        public static List<Famille> lesFamilles = new List<Famille>();
-        public static List<Medicament> lesMedicamentsParFamilles = new List<Medicament>();
+        public static Dictionary<string, Famille> lesFamilles = new Dictionary<string, Famille>();
+        public static Dictionary<string, Medicament> lesMedicaments = new Dictionary<string, Medicament>();
     }
 }

@@ -14,8 +14,9 @@ namespace AP_06
         public string Composition;
         public string Effets;
         public string ContreIndic;
+        public float Prix;
 
-        public Medicament(string DepotLegal, string NomCommercial, string FamCode, string Composition, string Effets, string ContreIndi)
+        public Medicament(string DepotLegal, string NomCommercial, string FamCode, string Composition, string Effets, string ContreIndi, float unPrix)
         {
             this.DepotLegal = DepotLegal;
             this.NomCommercial = NomCommercial;
@@ -23,7 +24,7 @@ namespace AP_06
             this.Composition = Composition;
             this.Effets = Effets;
             this.ContreIndic = ContreIndi;
+            this.Prix = unPrix;
         }
-
     }
 }

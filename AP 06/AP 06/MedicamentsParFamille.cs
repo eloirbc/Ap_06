@@ -25,13 +25,13 @@ namespace AP_06
 
             lireLesFamilles();
 
-            for (int i = 0; i < Global.lesFamilles.Count; i++)
+            foreach (KeyValuePair<string,Famille> uneFamille in Global.lesFamilles)
             {
-                ListViewItem uneLigne = new ListViewItem { Text = Global.lesFamilles[i].Code };
-                uneLigne.SubItems.Add(Global.lesFamilles[i].Libelle);
-
+                ListViewItem uneLigne = new ListViewItem { Text = uneFamille.Key };
+                uneLigne.SubItems.Add(uneFamille.Value.Libelle);
+                
                 SqlCommand commandSQL = new SqlCommand("prc_MedicamentParFamille", Connexion) { CommandType = CommandType.StoredProcedure };
-                SqlParameter param = new SqlParameter("@CodeFamille", SqlDbType.VarChar, 255) { Value = Global.lesFamilles[i].Code };
+                SqlParameter param = new SqlParameter("@CodeFamille", SqlDbType.VarChar, 255) { Value = uneFamille.Key };
                 commandSQL.Parameters.Add(param);
 
                 int nbMedicaments = 0;
