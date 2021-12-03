@@ -19,7 +19,9 @@ namespace AP_06
 
         private void etapeNormeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frm_EtapeNormee frm_EtapeNormee = new frm_EtapeNormee();
+            frm_EtapeNormee.Show();
+            this.Close();
         }
 
         private void workflowToolStripMenuItem_Click(object sender, EventArgs e)
