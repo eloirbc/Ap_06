@@ -29,7 +29,6 @@ namespace AP_06
             SQL.Open();
 
             string codeMedic = lvWorkflowMedicament.SelectedItems[0].Text;
-            MessageBox.Show(codeMedic);
 
             SqlCommand sqlCommand = new SqlCommand("fetchEtapes",SQL) { CommandType = CommandType.StoredProcedure };
             SqlParameter param = new SqlParameter("@code", SqlDbType.VarChar) { Value =  codeMedic };

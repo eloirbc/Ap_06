@@ -22,3 +22,4 @@ C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.GenerateResour
 C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.csproj.CoreCompileInputs.cache
 C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.exe
 C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP 06.pdb
+C:\Users\duponte\Desktop\Ap_06\AP 06\AP 06\obj\Debug\AP_06.frm_EtapeNormee.resources

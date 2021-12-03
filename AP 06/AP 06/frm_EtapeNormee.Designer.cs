@@ -59,6 +59,7 @@ namespace AP_06
             this.lvEtapeNormee.TabIndex = 3;
             this.lvEtapeNormee.UseCompatibleStateImageBehavior = false;
             this.lvEtapeNormee.View = System.Windows.Forms.View.Details;
+            this.lvEtapeNormee.SelectedIndexChanged += new System.EventHandler(this.lvEtapeNormee_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -92,12 +93,14 @@ namespace AP_06
             // 
             // btMaj
             // 
+            this.btMaj.Enabled = false;
             this.btMaj.Location = new System.Drawing.Point(573, 290);
             this.btMaj.Name = "btMaj";
             this.btMaj.Size = new System.Drawing.Size(449, 127);
             this.btMaj.TabIndex = 5;
             this.btMaj.Text = "Mettre à Jour";
             this.btMaj.UseVisualStyleBackColor = true;
+            this.btMaj.Click += new System.EventHandler(this.btMaj_Click);
             // 
             // tbDateNorme
             // 
@@ -146,6 +149,7 @@ namespace AP_06
             this.Controls.Add(this.lvEtapeNormee);
             this.Name = "frm_EtapeNormee";
             this.Text = "frm_EtapeNormee";
+            this.Load += new System.EventHandler(this.frm_EtapeNormee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
