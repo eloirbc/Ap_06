@@ -35,20 +35,18 @@ namespace AP_06
 
             while (allData.Read() && !trouver)
             {
-                if(allData.GetValue(1).ToString() == tbIdentifiant.Text && allData.GetValue(2).ToString() == tbMotDePasse.Text)
-                {
-                    trouver = true;
-
-                    Connexion.Close();
-                    Hide();
-                    Menu oneMenu = new Menu();
-
-                    oneMenu.ShowDialog();
-                }
+                if(allData.GetValue(1).ToString() == tbIdentifiant.Text && allData.GetValue(2).ToString() == tbMotDePasse.Text) trouver = true;
             }
 
-            if (!trouver) MessageBox.Show("AUCUN COMPTE TROUVER","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Connexion.Close();
+            if (!trouver) MessageBox.Show("AUCUN COMPTE TROUVER","ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                Hide();
+                Menu oneMenu = new Menu();
+
+                oneMenu.ShowDialog();
+            }
         }
     }
 }
