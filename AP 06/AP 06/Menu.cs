@@ -16,5 +16,29 @@ namespace AP_06
         {
             InitializeComponent();
         }
+
+        private void ajoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AjoutMedicament ajoutMedicament = new AjoutMedicament();
+            ajoutMedicament.Show();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void familleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consultationEnCoursDeValidationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultationMedicamentEnCours consultationMedicamentEnCoursDeValidation = new ConsultationMedicamentEnCours();
+            consultationMedicamentEnCoursDeValidation.Show();
+        }
     }
 }

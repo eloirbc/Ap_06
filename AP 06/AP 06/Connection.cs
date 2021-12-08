@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AP_06.GestionSql;
 
 namespace AP_06
 {
@@ -19,7 +20,8 @@ namespace AP_06
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            getFamilles();
+            getMedicaments();
         }
         private void btConnexion_Click(object sender, EventArgs e)
         {

@@ -31,15 +31,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.familleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicamentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etapeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etapeNormeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workflowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationEnCoursDeValidationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.familleToolStripMenuItem,
             this.medicamentToolStripMenuItem,
@@ -49,49 +52,67 @@
             this.workflowToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(618, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // familleToolStripMenuItem
             // 
             this.familleToolStripMenuItem.Name = "familleToolStripMenuItem";
-            this.familleToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.familleToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.familleToolStripMenuItem.Text = "Famille";
+            this.familleToolStripMenuItem.Click += new System.EventHandler(this.familleToolStripMenuItem_Click);
             // 
             // medicamentToolStripMenuItem
             // 
+            this.medicamentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajoutToolStripMenuItem,
+            this.consultationEnCoursDeValidationToolStripMenuItem});
             this.medicamentToolStripMenuItem.Name = "medicamentToolStripMenuItem";
-            this.medicamentToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.medicamentToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.medicamentToolStripMenuItem.Text = "Medicament";
+            // 
+            // ajoutToolStripMenuItem
+            // 
+            this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
+            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(335, 26);
+            this.ajoutToolStripMenuItem.Text = "Ajout";
+            this.ajoutToolStripMenuItem.Click += new System.EventHandler(this.ajoutToolStripMenuItem_Click);
             // 
             // etapeToolStripMenuItem
             // 
             this.etapeToolStripMenuItem.Name = "etapeToolStripMenuItem";
-            this.etapeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.etapeToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.etapeToolStripMenuItem.Text = "Etape";
             // 
             // etapeNormeeToolStripMenuItem
             // 
             this.etapeNormeeToolStripMenuItem.Name = "etapeNormeeToolStripMenuItem";
-            this.etapeNormeeToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.etapeNormeeToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.etapeNormeeToolStripMenuItem.Text = "EtapeNormee";
             // 
             // decisionToolStripMenuItem
             // 
             this.decisionToolStripMenuItem.Name = "decisionToolStripMenuItem";
-            this.decisionToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.decisionToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.decisionToolStripMenuItem.Text = "Decision";
             // 
             // workflowToolStripMenuItem
             // 
             this.workflowToolStripMenuItem.Name = "workflowToolStripMenuItem";
-            this.workflowToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.workflowToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.workflowToolStripMenuItem.Text = "Workflow";
+            // 
+            // consultationEnCoursDeValidationToolStripMenuItem
+            // 
+            this.consultationEnCoursDeValidationToolStripMenuItem.Name = "consultationEnCoursDeValidationToolStripMenuItem";
+            this.consultationEnCoursDeValidationToolStripMenuItem.Size = new System.Drawing.Size(335, 26);
+            this.consultationEnCoursDeValidationToolStripMenuItem.Text = "Consultation - En cours de validation";
+            this.consultationEnCoursDeValidationToolStripMenuItem.Click += new System.EventHandler(this.consultationEnCoursDeValidationToolStripMenuItem_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(618, 832);
@@ -101,6 +122,7 @@
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -117,5 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem etapeNormeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem decisionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workflowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultationEnCoursDeValidationToolStripMenuItem;
     }
 }

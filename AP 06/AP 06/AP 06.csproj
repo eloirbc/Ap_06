@@ -46,16 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutMedicament.Designer.cs">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultationMedicamentEnCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationMedicamentEnCours.Designer.cs">
+      <DependentUpon>ConsultationMedicamentEnCours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Decision.cs" />
     <Compile Include="Etape.cs" />
     <Compile Include="EtapeNormee.cs" />
     <Compile Include="Famille.cs" />
+    <Compile Include="GestionSql.cs" />
     <Compile Include="Medicament.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -66,8 +79,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflow.cs" />
+    <EmbeddedResource Include="AjoutMedicament.resx">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationMedicamentEnCours.resx">
+      <DependentUpon>ConsultationMedicamentEnCours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -80,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
