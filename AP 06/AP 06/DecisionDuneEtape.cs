@@ -42,6 +42,11 @@ namespace AP_06
                     MessageBox.Show("Ce médicament plus disponible.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                else if (Etape == 8)
+                {
+                    gbMettreAJourEtat.Hide();
+                    MessageBox.Show("Ce médicament a déjà atteint sa dernière étape.", "INFORMATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                 {
                     lbMedicament.Text = lvMedicaments.SelectedItems[0].SubItems[1].Text;
@@ -183,8 +188,15 @@ namespace AP_06
                     uneLigne.SubItems.Add(allData.GetValue(i).ToString());
                 }
 
-                if (randomEtat == 1) uneLigne.SubItems.Add("En cours");
-                else if (randomEtat == 2) uneLigne.SubItems.Add("Refusé");
+                if(uneLigne.SubItems[7].Text == "8")
+                {
+                    uneLigne.SubItems.Add("Terminé");
+                }
+                else
+                {
+                    if (randomEtat == 1) uneLigne.SubItems.Add("En cours");
+                    else if (randomEtat == 2) uneLigne.SubItems.Add("Refusé");
+                }
 
                 lvMedicaments.Items.Add(uneLigne);
             }
