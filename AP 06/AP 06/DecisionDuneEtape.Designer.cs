@@ -196,8 +196,8 @@ namespace AP_06
             this.cbTypeDécision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeDécision.FormattingEnabled = true;
             this.cbTypeDécision.Items.AddRange(new object[] {
-            "Accepté",
-            "Refusé"});
+            "validée",
+            "refusée"});
             this.cbTypeDécision.Location = new System.Drawing.Point(670, 217);
             this.cbTypeDécision.Name = "cbTypeDécision";
             this.cbTypeDécision.Size = new System.Drawing.Size(216, 32);

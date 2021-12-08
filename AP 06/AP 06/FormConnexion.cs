@@ -19,9 +19,14 @@ namespace AP_06
             InitializeComponent();
         }
 
+        string depot;
+        int num;
+        int dcs;
+        DateTime date;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void btConnexion_Click(object sender, EventArgs e)
         {

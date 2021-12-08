@@ -26,6 +26,7 @@ namespace AP_06
         }
 
         public string codeFam;
+        public string Depot;
         public string Etat;
         public int Etape;
         private void lvMedicaments_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,8 +36,9 @@ namespace AP_06
                 codeFam = lvMedicaments.SelectedItems[0].SubItems[2].Text;
                 Etat = lvMedicaments.SelectedItems[0].SubItems[8].Text;
                 Etape = int.Parse(lvMedicaments.SelectedItems[0].SubItems[7].Text);
+                Depot = lvMedicaments.SelectedItems[0].Text;
 
-                if (Etat == "Refusé") //En cours //Refusé
+                if (Etat == "refusée") //En cours //Refusé
                 {
                     gbMettreAJourEtat.Hide();
                     MessageBox.Show("Ce médicament plus disponible.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -60,7 +62,14 @@ namespace AP_06
                     allData.Read();
 
                     lbNumero.Text = allData.GetValue(0).ToString();
-                    lbDate.Text = DateTime.Now.ToString("dddd dd MMMM yyyy");
+
+                    SqlCommand commandSQL7 = new SqlCommand("prc_getSubir", Connexion) { CommandType = CommandType.StoredProcedure };
+                    SqlParameter param7 = new SqlParameter("@depotLegal", SqlDbType.VarChar, 255) { Value = Depot }; //HERE===================================
+                    commandSQL7.Parameters.Add(param7);
+                    SqlDataReader allData7 = commandSQL7.ExecuteReader();
+
+                    while(allData7.Read()) lbDate.Text = allData7.GetValue(3).ToString();
+
                     lbLibelle.Text = allData.GetValue(1).ToString();
 
                     Connexion.Close();
@@ -138,10 +147,14 @@ namespace AP_06
                     Connexion.Open();
 
                     SqlCommand commandSQL5 = new SqlCommand("prc_ChangeEtapeMedicament", Connexion) { CommandType = CommandType.StoredProcedure };
-                    SqlParameter param51 = new SqlParameter("@unCodeFamille", SqlDbType.VarChar, 255) { Value = codeFam };
+                    SqlParameter param51 = new SqlParameter("@unDepot", SqlDbType.VarChar, 255) { Value = Depot };
                     SqlParameter param52 = new SqlParameter("@unNumEtape", SqlDbType.Int) { Value = Etape + 1 };
+                    SqlParameter param53 = new SqlParameter("@uneDecision", SqlDbType.Int) { Value = 1 };
+                    SqlParameter param54 = new SqlParameter("@uneDate", SqlDbType.DateTime) { Value = dtpDateDecision.Value };
                     commandSQL5.Parameters.Add(param51);
                     commandSQL5.Parameters.Add(param52);
+                    commandSQL5.Parameters.Add(param53);
+                    commandSQL5.Parameters.Add(param54);
                     commandSQL5.ExecuteReader();
 
                     Connexion.Close();
@@ -151,10 +164,14 @@ namespace AP_06
                     Connexion.Open();
 
                     SqlCommand commandSQL5 = new SqlCommand("prc_ChangeEtapeMedicament", Connexion) { CommandType = CommandType.StoredProcedure };
-                    SqlParameter param51 = new SqlParameter("@unCodeFamille", SqlDbType.VarChar, 255) { Value = codeFam };
-                    SqlParameter param52 = new SqlParameter("@unNumEtape", SqlDbType.Int) { Value = 1 };
+                    SqlParameter param51 = new SqlParameter("@unDepot", SqlDbType.VarChar, 255) { Value = Depot };
+                    SqlParameter param52 = new SqlParameter("@unNumEtape", SqlDbType.Int) { Value = Etape };
+                    SqlParameter param53 = new SqlParameter("@uneDecision", SqlDbType.Int) { Value = 2 };
+                    SqlParameter param54 = new SqlParameter("@uneDate", SqlDbType.DateTime) { Value = dtpDateDecision.Value };
                     commandSQL5.Parameters.Add(param51);
                     commandSQL5.Parameters.Add(param52);
+                    commandSQL5.Parameters.Add(param53);
+                    commandSQL5.Parameters.Add(param54);
                     commandSQL5.ExecuteReader();
 
                     Connexion.Close();
@@ -167,7 +184,7 @@ namespace AP_06
                 MessageBox.Show("Changement annulé", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        //prc_getSubir
         public void ChargementListView()
         {
             lvMedicaments.Items.Clear();
@@ -183,20 +200,24 @@ namespace AP_06
                 ListViewItem uneLigne = new ListViewItem();
 
                 uneLigne.Text = allData.GetValue(0).ToString();
-                for (int i = 1; i < 8; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     uneLigne.SubItems.Add(allData.GetValue(i).ToString());
                 }
 
-                if(uneLigne.SubItems[7].Text == "8")
+                SqlCommand commandSQL6 = new SqlCommand("prc_getSubir", Connexion) { CommandType = CommandType.StoredProcedure };
+                SqlParameter param6 = new SqlParameter("@depotLegal", SqlDbType.VarChar, 255) { Value = allData.GetValue(0).ToString() };
+                commandSQL6.Parameters.Add(param6);
+                SqlDataReader allData6 = commandSQL6.ExecuteReader();
+
+                while (allData6.Read())
                 {
-                    uneLigne.SubItems.Add("Terminé");
+                    uneLigne.SubItems.Add(allData6.GetValue(1).ToString());
+                    if(allData6.GetValue(2).ToString() == "1") uneLigne.SubItems.Add("validée");
+                    else uneLigne.SubItems.Add("refusée");
+
                 }
-                else
-                {
-                    if (randomEtat == 1) uneLigne.SubItems.Add("En cours");
-                    else if (randomEtat == 2) uneLigne.SubItems.Add("Refusé");
-                }
+
 
                 lvMedicaments.Items.Add(uneLigne);
             }
