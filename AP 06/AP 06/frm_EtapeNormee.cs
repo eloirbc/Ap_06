@@ -18,12 +18,12 @@ namespace AP_06
             InitializeComponent();
         }
 
-        SqlConnection SQL;
-        int lignes = 0;
+        private SqlConnection SQL;
+        private int lignes = 0;
 
         private void frm_EtapeNormee_Load(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=BTS2020-15\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
+            const string connetionString = @"Data Source=BTS2020-15\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
             SQL = new SqlConnection(connetionString);
             SqlDataReader reader;
             SQL.Open();
@@ -57,7 +57,8 @@ namespace AP_06
 
         private void btMaj_Click(object sender, EventArgs e)
         {
-            string connetionString = @"Data Source=BTS2020-15\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
+            if (lvEtapeNormee.SelectedItems.Count == 0) return;
+            const string connetionString = @"Data Source=BTS2020-15\SQLEXPRESS;Initial Catalog=DB_gesAMM;Integrated Security=True";
             SQL = new SqlConnection(connetionString);
             SQL.Open();
 
@@ -69,7 +70,13 @@ namespace AP_06
             sqlCommand.Parameters.Add(param2);
             sqlCommand.Parameters.Add(param3);
             SqlDataReader reader = sqlCommand.ExecuteReader();
+            reader.Close();
+
             lvEtapeNormee.Items.Clear();
+
+            SqlCommand sqlCommand2 = new SqlCommand("loadEtapesNormees", SQL);
+            sqlCommand2.CommandType = CommandType.StoredProcedure;
+            reader = sqlCommand2.ExecuteReader();
             while (reader.Read())
             {
                 ListViewItem ligne = new ListViewItem();
@@ -80,6 +87,8 @@ namespace AP_06
                 lignes++;
             }
             lignes = 0;
+            tbDateNorme.Clear();
+            tbNorme.Clear();
             MessageBox.Show("La norme a bien été mise à jour.");
         }
     }
