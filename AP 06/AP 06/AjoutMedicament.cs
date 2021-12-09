@@ -29,23 +29,30 @@ namespace AP_06
 
         private void btAjouterMedicament_Click(object sender, EventArgs e)
         {
-            if (Medicament.LesMedicaments.ContainsKey(tbDepotLegal.Text.ToString()))
+            if (tbCompositionMedicament.Text == "" || tbContreIndications.Text == "" || tbDepotLegal.Text == "" || tbEffetsMedicament.Text == "" || tbNomCommercial.Text == "" || tbPrix.Text == "")
             {
-                MessageBox.Show("Ce médicament existe déja");
+                MessageBox.Show("Veuillez renseigner tous les champs correctement");
             }
             else
             {
-                float prix = float.Parse(tbPrix.Text);
-                bool ajouter = ajouterMedicament(tbDepotLegal.Text.ToString(), tbNomCommercial.Text.ToString(), cbChoixFamilles.Text, tbCompositionMedicament.Text.ToString(), tbEffetsMedicament.Text.ToString(), tbContreIndications.Text.ToString(), prix);
-
-                if (ajouter)
+                if (Medicament.LesMedicaments.ContainsKey(tbDepotLegal.Text.ToString()))
                 {
-                    MessageBox.Show("Le médicament a bien été ajouté");
-                    getMedicaments();
+                    MessageBox.Show("Ce médicament existe déja");
                 }
                 else
                 {
-                    MessageBox.Show("Erreur lors de l'ajout");
+                    float prix = float.Parse(tbPrix.Text);
+                    bool ajouter = ajouterMedicament(tbDepotLegal.Text.ToString().ToUpper(), tbNomCommercial.Text.ToString(), cbChoixFamilles.Text, tbCompositionMedicament.Text.ToString(), tbEffetsMedicament.Text.ToString(), tbContreIndications.Text.ToString(), prix);
+
+                    if (ajouter)
+                    {
+                        MessageBox.Show("Le médicament a bien été ajouté");
+                        getMedicaments();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout");
+                    }
                 }
             }
         }

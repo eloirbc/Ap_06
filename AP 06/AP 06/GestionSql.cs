@@ -28,6 +28,46 @@ namespace AP_06
             Connexion.Close();
         }
 
+        public static void getDecision()
+        {
+            Decision.lesDecisions.Clear();
+            Connexion.Open();
+            SqlCommand commande = new SqlCommand("prcGetDecision", Connexion);
+            commande.CommandType = CommandType.StoredProcedure;
+            SqlDataReader resultat = commande.ExecuteReader();
+
+            while (resultat.Read())
+            {
+                int idDecision = (int)resultat["DCS_ID"];
+                string libelleDecision = resultat["DCS_LIBELLE"].ToString();
+
+                Decision.lesDecisions.Add(new Decision(idDecision, libelleDecision));
+            }
+            Connexion.Close();
+        }
+
+        public static void getEtapes()
+        {
+            Etape.lesEtapes.Clear();
+            Connexion.Open();
+            SqlCommand commande = new SqlCommand("prcGetEtape", Connexion);
+            commande.CommandType = CommandType.StoredProcedure;
+            SqlDataReader resultat = commande.ExecuteReader();
+
+            while (resultat.Read())
+            {
+                int numEtape = (int)resultat["ETP_NUM"];
+                string libelleEtape = resultat["ETP_LIBELLE"].ToString();
+                string normeEtape = resultat["ETP_NORME"].ToString();
+                DateTime dateNormeEtape = (DateTime)resultat["ETP_DATE_NORME"];
+
+                Etape.lesEtapes.Add(new Etape(numEtape, libelleEtape));
+                Etape.lesEtapes.Add(new EtapeNormee(numEtape, libelleEtape, normeEtape, dateNormeEtape));
+            }
+            Connexion.Close();
+        }
+
+
         public static void getMedicaments()
         {
             Medicament.LesMedicaments.Clear();
@@ -44,16 +84,11 @@ namespace AP_06
                 string compositionMed = resultat["MED_COMPOSITION"].ToString();
                 string effetsMed = resultat["MED_EFFETS"].ToString();
                 string contreIndicationMed = resultat["MED_CONTREINDIC"].ToString();
-
-
-                object prix = resultat["MED_PRIXECHANTILLON"];
-                float prixEchantillonMed = 0.0f;
-                if (prix.GetType() != typeof(DBNull))
-                    prixEchantillonMed= (float)resultat["MED_PRIXECHANTILLON"];
+                float prixEchantillonMed = (float)resultat["MED_PRIXECHANTILLON"];
 
                 object derEtape = resultat["Derniere_etape"];
                 int derniereEtape = 0;
-                if(derEtape.GetType() != typeof(DBNull))
+                if (derEtape.GetType() != typeof(DBNull))
                     derniereEtape = (int)resultat["Derniere_etape"];
 
                 new Medicament(depotLegalMed, nomCommercialMed, familleCode, compositionMed, effetsMed, contreIndicationMed, prixEchantillonMed, derniereEtape);
@@ -115,6 +150,7 @@ namespace AP_06
             paramContreIndication.Value = contreIndicationMed;
             SqlParameter paramPrixEchantillon = new SqlParameter("@PrixEchantillon", System.Data.SqlDbType.Real);
             paramPrixEchantillon.Value = prixEchantillon;
+
             maRequete.Parameters.Add(paramDepotLegal);
             maRequete.Parameters.Add(paramNomCommercial);
             maRequete.Parameters.Add(paramFamilleCode);

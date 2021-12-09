@@ -9,7 +9,7 @@ namespace AP_06
     public class Etape
     {
         public static List<Etape> lesEtapes = new List<Etape>();
-
+        private List<EtapeNormee> lesEtapesNormees;
         private int numEtape;
         private string libelleEtape;
 
@@ -18,6 +18,7 @@ namespace AP_06
         {
             this.numEtape = leNumEtape;
             this.libelleEtape = leLibelleEtape;
+            this.lesEtapesNormees = new List<EtapeNormee>();
         }
 
         public int getNumEtape()
@@ -28,6 +29,11 @@ namespace AP_06
         public string getLibelleEtape()
         {
             return this.libelleEtape;
+        }
+
+        public List<EtapeNormee> GetLesEtapeNormees()
+        {
+            return this.lesEtapesNormees;
         }
     }
 }

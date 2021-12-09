@@ -153,9 +153,9 @@ namespace AP_06
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(105, 420);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.Size = new System.Drawing.Size(201, 17);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Prix échantillon :";
+            this.label6.Text = "Prix échantillon (format 0.00)  :";
             // 
             // label7
             // 

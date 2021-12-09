@@ -22,6 +22,8 @@ namespace AP_06
         {
             getFamilles();
             getMedicaments();
+            getEtapes();
+            getDecision();
         }
         private void btConnexion_Click(object sender, EventArgs e)
         {
