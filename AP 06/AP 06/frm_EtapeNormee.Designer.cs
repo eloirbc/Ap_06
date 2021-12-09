@@ -32,9 +32,9 @@ namespace AP_06
             this.lvEtapeNormee = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.btMaj = new System.Windows.Forms.Button();
             this.tbDateNorme = new System.Windows.Forms.TextBox();
             this.tbNorme = new System.Windows.Forms.TextBox();
@@ -71,16 +71,6 @@ namespace AP_06
             this.columnHeader2.Text = "Libelle de l\'étape";
             this.columnHeader2.Width = 150;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(992, 67);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "MISE À JOUR DES ÉTAPES NORMÉES";
-            // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Norme";
@@ -90,6 +80,16 @@ namespace AP_06
             // 
             this.columnHeader4.Text = "Date de la norme";
             this.columnHeader4.Width = 120;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(992, 67);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "MISE À JOUR DES ÉTAPES NORMÉES";
             // 
             // btMaj
             // 
@@ -149,6 +149,7 @@ namespace AP_06
             this.Controls.Add(this.lvEtapeNormee);
             this.Name = "frm_EtapeNormee";
             this.Text = "frm_EtapeNormee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_EtapeNormee_FormClosing);
             this.Load += new System.EventHandler(this.frm_EtapeNormee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

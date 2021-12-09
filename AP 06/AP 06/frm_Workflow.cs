@@ -21,6 +21,11 @@ namespace AP_06
             InitializeComponent();
         }
 
+        private void frm_Workflow_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void lvWorkflowMedicament_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvWorkflowMedicament.SelectedItems.Count == 0) return;

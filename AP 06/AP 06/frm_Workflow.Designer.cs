@@ -148,6 +148,7 @@ namespace AP_06
             this.Controls.Add(this.label1);
             this.Name = "frm_Workflow";
             this.Text = "Workflow des étapes d\'un médicament";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Workflow_FormClosing);
             this.Load += new System.EventHandler(this.frm_Workflow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);

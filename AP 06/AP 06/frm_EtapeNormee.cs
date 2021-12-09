@@ -18,6 +18,11 @@ namespace AP_06
             InitializeComponent();
         }
 
+        private void frm_EtapeNormee_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private SqlConnection SQL;
         private int lignes = 0;
 
