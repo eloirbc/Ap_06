@@ -62,38 +62,6 @@ namespace AP_06
         public string CodeFamille;
         private void lvFamille_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (lvFamille.SelectedItems.Count > 0)
-            //{
-            //    lvMedicaments.Items.Clear();
-
-            //    CodeFamille = lvFamille.SelectedItems[0].Text;
-
-            //    Connexion.Open();
-
-            //    SqlCommand commandSQL = new SqlCommand("prc_MedicamentParFamille", Connexion) { CommandType = CommandType.StoredProcedure };
-            //    SqlParameter param = new SqlParameter("@CodeFamille", SqlDbType.VarChar,255) { Value = CodeFamille };
-            //    commandSQL.Parameters.Add(param);
-
-            //    SqlDataReader allData = commandSQL.ExecuteReader();
-
-            //    while (allData.Read())
-            //    {
-            //        ListViewItem uneLigne = new ListViewItem();
-
-            //        uneLigne.Text = allData.GetValue(0).ToString();
-            //        uneLigne.SubItems.Add(allData.GetValue(1).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(2).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(3).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(4).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(5).ToString());
-            //        uneLigne.SubItems.Add(allData.GetValue(6).ToString());
-
-            //        lvMedicaments.Items.Add(uneLigne);
-            //    }
-
-            //    Connexion.Close();
-            //}
-
             if (lvFamille.SelectedItems.Count > 0)
             {
                 lvMedicaments.Items.Clear();

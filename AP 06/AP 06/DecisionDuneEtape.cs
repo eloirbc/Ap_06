@@ -213,7 +213,7 @@ namespace AP_06
                 while (allData6.Read())
                 {
                     uneLigne.SubItems.Add(allData6.GetValue(1).ToString());
-                    if(allData6.GetValue(2).ToString() == "1") uneLigne.SubItems.Add("validée");
+                    if(allData6.GetValue(2).ToString() == "0") uneLigne.SubItems.Add("validée");
                     else uneLigne.SubItems.Add("refusée");
 
                 }
